@@ -8,8 +8,9 @@
 " General
     set autochdir  " always switch to the current file directory
     set backspace=indent,eol,start  " make backspace a more flexible
-    set backup  " make backup files
-    set backupdir=~/.vim/backup  " where to put backup files
+    "set backup  " make backup files
+    "set backupdir=~/.vim/backup  " where to put backup files
+    set nobackup  "do not keep a backup
     set clipboard+=unnamed  " share windows clipboard
     set directory=~/.vim/tmp  " directory to place swap files in
     set fileformats=unix,dos,mac  "support all three, in this order
@@ -44,7 +45,31 @@
     set showcmd  "show the command being typed
     set showmatch  " show matching brackets
     set sidescrolloff=10  " Keep 5 lines at the size
+    set title  " show title in console title bar
 "set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%041,%04v]
+
+" Colors and Fonts
+    syntax enable "Enable syntax hl
+    if has("unix")
+        let s:uname = system("uname")
+        if s:uname == "Darwin\n"
+            set gfn=Menlo:h16
+        else
+            set gfn=Monospace\ 12
+        endif
+    endif
+    set shell=/bin/bash
+
+    if has("gui_running")
+        set guioptions-=T
+        set t_Co=256
+        set background=dark  " adapt colors for background
+        colorscheme peaksea
+    else
+        colorscheme elflord  "use this color scheme
+        set background=dark  " adapt colors for background
+
+    endif
 
 
 " Text Formatting/Layout
