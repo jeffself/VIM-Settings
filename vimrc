@@ -24,8 +24,7 @@
     set wildmode=list:longest  "turn on wild mode huge list
 
 " Vim UI
-    set cursorcolumn  "highlight the current column
-    set cursorline  " highlight the current line
+    set cmdheight=2  " sets the command height to 2
     set incsearch  " BUT do highlight as you type your search phrase
     set laststatus=2  " always show the status line
     set lazyredraw  "do not redraw while running macros
